@@ -1,16 +1,22 @@
 import React from 'react';
-
+import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-const Header = () => {
+
+const Header = (props) => {
 	return (
-		<div>
+		<div className="mb-5">
 			<Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
 				<Container>
-					<Navbar.Brand href="#">employee management app</Navbar.Brand>
+					<LinkContainer to="/">
+						<Navbar.Brand>employee management app</Navbar.Brand>
+					</LinkContainer>
+
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="ml-auto">
-							<Nav.Link href="#">+ add an employee</Nav.Link>
+							<LinkContainer to="/employee-signin">
+								<Nav.Link>sign in</Nav.Link>
+							</LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
